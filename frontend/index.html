@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consulta de informações climáticas em tempo real">
+    <title>PolClima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation">
+        <div class="particles"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1 class="logo">
+                <span class="logo-icon">🌤️</span>
+                <span>Pol<span class="highlight">Clima</span></span>
+            </h1>
+        </header>
+
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    class="search-input" 
+                    placeholder="Digite o nome da cidade..."
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section id="weatherContainer" class="weather-container hidden">
+            <div class="weather-main glass-card">
+                <div class="location">
+                    <h2 id="cityName" class="city-name">---</h2>
+                    <p id="country" class="country">---</p>
+                </div>
+                
+                <div class="weather-primary">
+                    <div class="temperature-container">
+                        <img id="weatherIcon" class="weather-icon" src="" alt="Condição do tempo">
+                        <div class="temperature">
+                            <span id="temp" class="temp-value">--</span>
+                            <span class="temp-unit">°C</span>
+                        </div>
+                    </div>
+                    <p id="condition" class="condition">---</p>
+                    <p id="feelsLike" class="feels-like">Sensação térmica: --°C</p>
+                </div>
+
+                <div class="last-updated">
+                    <span id="lastUpdated">Última atualização: --</span>
+                </div>
+            </div>
+
+            <div class="weather-details">
+                <div class="detail-card glass-card">
+                    <div class="detail-icon humidity-icon">💧</div>
+                    <div class="detail-info">
+                        <span class="detail-value" id="humidity">--%</span>
+                        <span class="detail-label">Umidade</span>
+                    </div>
+                </div>
+
+                <div class="detail-card glass-card">
+                    <div class="detail-icon wind-icon">💨</div>
+                    <div class="detail-info">
+                        <span class="detail-value" id="wind">-- km/h</span>
+                        <span class="detail-label">Vento</span>
+                    </div>
+                </div>
+
+                <div class="detail-card glass-card">
+                    <div class="detail-icon pressure-icon">🌡️</div>
+                    <div class="detail-info">
+                        <span class="detail-value" id="pressure">-- mb</span>
+                        <span class="detail-label">Pressão</span>
+                    </div>
+                </div>
+
+                <div class="detail-card glass-card">
+                    <div class="detail-icon uv-icon">☀️</div>
+                    <div class="detail-info">
+                        <span class="detail-value" id="uv">--</span>
+                        <span class="detail-label">Índice UV</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="errorContainer" class="error-container hidden">
+            <div class="error-card glass-card">
+                <span class="error-icon">😕</span>
+                <h3>Cidade não encontrada</h3>
+                <p>Por favor, verifique o nome e tente novamente.</p>
+            </div>
+        </section>
+
+        <section id="initialState" class="initial-state">
+            <div class="initial-card glass-card">
+                <span class="initial-icon">🌍</span>
+                <h3>Descubra o clima de qualquer cidade</h3>
+                <p>Digite o nome de uma cidade acima para começar</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

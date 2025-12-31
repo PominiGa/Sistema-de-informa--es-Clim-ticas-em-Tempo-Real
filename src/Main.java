@@ -52,13 +52,13 @@ public class Main {
         JSONObject informacoesMeteorologicas = dadosJson.getJSONObject("current");
 
         String cidade = dadosJson.getJSONObject("location").getString("name");
-        String pais = dadosJson.getJSONObject("locarion").getString("country");
+        String pais = dadosJson.getJSONObject("location").getString("country");
 
-        String condicaoDoTempo = informacoesMeteorologicas.getJSONObject("condirion").getString("text");
+        String condicaoDoTempo = informacoesMeteorologicas.getJSONObject("condition").getString("text");
         int umidade = informacoesMeteorologicas.getInt("humidity");
         float velocidadeDoVento = informacoesMeteorologicas.getFloat("wind_kph");
         float pressaoAtmosferica = informacoesMeteorologicas.getFloat("pressure_mb");
-        float sensacaoTermica = informacoesMeteorologicas.getFloat("fellslike_c");
+        float sensacaoTermica = informacoesMeteorologicas.getFloat("feelslike_c");
         float temperaturaAtual = informacoesMeteorologicas.getFloat("temp_c");
 
         String dataHoraString = informacoesMeteorologicas.getString("last_updated");
